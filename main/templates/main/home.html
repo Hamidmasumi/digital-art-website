@@ -4,8 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صفحه اصلی</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body style="background-color: black; color: white;">
-    <h1>به وب‌سایت آثار هنری خوش آمدید</h1>
-</body>
-</html>
+    <div class="header-text">
+        <h1>به گالری آریو خوش آمدید</h1>
+</div>
+    <nav class="navbar">
+        <div class="logo">لوگو</div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <ul class="menu">
+            <li><a href="#">تماس</a></li>
+            <li><a href="#">مقالات</a></li>
+            <li><a href="#">محصولات</a></li>
+            <li><a href="#">اثرهای نقاشی</a></li>
+            <li><a href="#">صفحه اصلی</a></li>
+        </ul>
+    </nav>
+<script src="{% static 'js/scripts.js' %}"></script>
+    <div class="slider">
+    <div class="slides">
+        <div class="slide"><img src="{% static 'images/slide1.jpg' %}" alt="تصویر ۱"></div>
+        <div class="slide"><img src="{% static 'images/slide2.jpg' %}" alt="تصویر ۲"></div>
+        <div class="slide"><img src="{% static 'images/slide3.jpg' %}" alt="تصویر ۳"></div>
+    </div>
+</div>
+<div class="introduction">
+    <h2>درباره گالری آریو</h2>
+    <p>گالری آریو برای نمایش و فروش آثار هنری طراحی شده است. شما می‌توانید نمونه کارها را در زیر و صفحه محصولات مشاهده و از خدمات ما استفاده کنید</p>
+</div>
+<div class="gallery">
+    <div class="artworks">
+        {% for artwork in artworks %}
+            <div class="artwork">
+                <img src="{{ artwork.image.url }}" alt="{{ artwork.title }}">
+                <p>{{ artwork.title }}</p>
+                <p>{{ artwork.description }}</p> <!-- توضیحات اثر -->
+                <a href="{{ artwork.purchase_link }}" class="buy-button">خرید</a> <!-- دکمه خرید -->
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        <a href="#" class="page">1</a>
+        <a href="#" class="page">2</a>
+        <a href="#" class="page">3</a>
+        <a href="#" class="page">4</a>
+        <a href="#" class="page">5</a>
+    </div>
+</div>

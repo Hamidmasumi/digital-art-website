@@ -1,0 +1,177 @@
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #222;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 28px; /* سایز دلخواه */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #ff9800;
+}
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #333;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    flex: 0 0 100%;
+}
+
+.slide img {
+    width: auto;
+    max-width: 100%;
+    height: auto%;
+}
+
+@media (min-width: 1024px) {  /* تغییرات فقط برای نمایشگرهای بزرگ */
+    .slider {
+        margin-left: 465px; /* مقدار رو کم و زیاد کن تا به جای مناسب برسه */
+    }
+}
+
+.introduction {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 30px;
+}
+
+.introduction h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ff9800;
+}
+
+.introduction p {
+    font-size: 24px;
+    line-height: 1.6;
+    color: white;
+}
+
+
+.gallery {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.artworks {
+    display: grid;
+    gap: 15px;
+}
+
+/* استایل برای موبایل */
+@media (max-width: 768px) {
+    .artworks {
+        grid-template-columns: 1fr; /* ۱ ستون (۸ ردیف) */
+    }
+}
+
+/* استایل برای آیپد و ویندوز */
+@media (min-width: 769px) {
+    .artworks {
+        grid-template-columns: repeat(2, 1fr); /* ۲ ستون (۴ ردیف) */
+    }
+}
+
+.artwork img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination .page {
+    text-decoration: none;
+    color: white;
+    background-color: #444;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.pagination .page:hover {
+    background-color: #ff9800;
+}
