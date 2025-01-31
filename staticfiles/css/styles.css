@@ -11,6 +11,7 @@ body {
     align-items: center;
     text-align: center;
     width: 100%;
+    color: #ff9800;
 }
 
 .navbar {
@@ -43,7 +44,7 @@ body {
 .menu li a {
     text-decoration: none;
     color: white;
-    font-size: 28px; /* سایز دلخواه */
+    font-size: 24px; /* سایز دلخواه */
     font-weight: bold;
     transition: color 0.3s;
 }
@@ -174,4 +175,144 @@ body {
 
 .pagination .page:hover {
     background-color: #ff9800;
+}
+
+.buy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.buy-button::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid #ff9800;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #e67e22;
+}
+
+.buy-button:hover::before {
+    border-color: #e67e22;
+
+}
+
+/* استایل بخش خدمات */
+.services {
+    text-align: center;
+    margin: 70px 0;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* در موبایل، کادرها زیر هم می‌آیند */
+}
+
+.service-card {
+    background-color: #222; /* رنگ پس‌زمینه */
+    color: #fff; /* رنگ متن */
+    padding: 35px;
+    width: 280px; /* عرض کم */
+    height: 350px; /* ارتفاع بیشتر */
+    border-radius: 10px; /* گوشه‌های گرد */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* افکت hover */
+.service-card:hover {
+    transform: scale(1.1); /* کمی بزرگ‌تر شدن در هاور */
+}
+
+/* استایل دکمه */
+.see-more {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #ff6600; /* رنگ دکمه */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.see-more:hover {
+    background-color: #cc5500;
+}
+
+/* تنظیمات برای موبایل */
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column; /* کادرها زیر هم بیایند */
+        align-items: center;
+    }
+
+    .service-card {
+        width: 90%; /* عرض بیشتر در موبایل */
+        height: auto; /* ارتفاع اتوماتیک */
+    }
+}
+
+/* استایل برای صفحه راه‌های ارتباطی */
+
+.contact-info {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* در موبایل، کادرها زیر هم می‌آیند */
+}
+
+.service-card {
+    background-color: #222; /* رنگ پس‌زمینه */
+    color: #fff; /* رنگ متن */
+    padding: 20px;
+    width: 200px; /* عرض کم */
+    height: 150px; /* ارتفاع کمتر */
+    border-radius: 10px; /* گوشه‌های گرد */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* افکت hover */
+.service-card:hover {
+    transform: scale(1.1); /* کمی بزرگ‌تر شدن در هاور */
+}
+
+/* تنظیمات برای موبایل */
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column; /* کادرها زیر هم بیایند */
+        align-items: center;
+    }
+
+    .service-card {
+        width: 90%; /* عرض بیشتر در موبایل */
+        height: auto; /* ارتفاع اتوماتیک */
+    }
 }

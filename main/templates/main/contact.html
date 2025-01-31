@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راه‌های ارتباطی</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="header-text">
+        <h1>راه‌های ارتباطی</h1>
+    </div>
+    {% include 'main/navbar.html' %} <!-- تگ include برای نمایش منو -->
+    <div class="contact-info">
+        <p>کاربر گرامی شما می‌توانید از راه‌های ارتباطی زیر در این صفحه با ما در ارتباط باشید.</p>
+    </div>
+    <div class="services-container">
+        <div class="service-card">
+            <h3>اینستاگرام</h3>
+            <img src="{% static 'images/instagram-icon.png' %}" alt="اینستاگرام" class="icon" onclick="window.location.href='https://www.instagram.com/your_page'">
+        </div>
+        <div class="service-card">
+            <h3>لینکدین</h3>
+            <img src="{% static 'images/linkedin-icon.png' %}" alt="لینکدین" class="icon" onclick="window.location.href='https://www.linkedin.com/your_page'">
+        </div>
+        <div class="service-card">
+            <h3>OpenSee</h3>
+            <img src="{% static 'images/opensee-icon.png' %}" alt="OpenSee" class="icon" onclick="window.location.href='https://www.opensee.com/your_page'">
+        </div>
+    </div>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    {% include 'main/services.html' %} <!-- تگ include برای نمایش خدمات ما -->
+
+</body>
+</html>
